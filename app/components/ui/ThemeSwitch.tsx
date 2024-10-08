@@ -1,3 +1,4 @@
+import React from 'react';
 import { useStore } from '@nanostores/react';
 import { memo, useEffect, useState } from 'react';
 import { themeStore, toggleTheme } from '~/lib/stores/theme';
@@ -7,7 +8,7 @@ interface ThemeSwitchProps {
   className?: string;
 }
 
-export const ThemeSwitch = memo(({ className }: ThemeSwitchProps) => {
+export const ThemeSwitch: React.FC<ThemeSwitchProps> = memo(({ className }) => {
   const theme = useStore(themeStore);
   const [domLoaded, setDomLoaded] = useState(false);
 
